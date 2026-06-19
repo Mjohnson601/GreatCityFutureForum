@@ -3,305 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Capital City Future Forum | Great City Mississippi Foundation</title>
+<title>Capitol City Future Forum | A Great City Mississippi Foundation Event</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --midnight:#0B2237;
-    --midnight-2:#0E2A42;
-    --slate:#14324A;
-    --gold:#D6A53C;
-    --gold-lite:#F0C975;
-    --ivory:#F7F3EA;
-    --ivory-2:#FBF8F1;
-    --ink:#10212E;
-    --ink-soft:#41535F;
-    --mist:#A9BCCC;
-    --hair:rgba(214,165,60,.34);
-    --hair-soft:rgba(16,33,46,.12);
+    --midnight:#0B2237;--midnight-2:#0E2A42;--slate:#14324A;--gold:#D6A53C;--gold-lite:#F0C975;--gold-deep:#9C7320;
+    --ivory:#F7F3EA;--ivory-2:#FBF8F1;--ink:#10212E;--ink-soft:#41535F;--mist:#A9BCCC;
+    --hair:rgba(214,165,60,.34);--hair-soft:rgba(16,33,46,.12);
   }
+  *{box-sizing:border-box;}html,body{margin:0;padding:0;}
+  body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:radial-gradient(1100px 700px at 50% -10%, #102a40 0%, #081420 60%, #060f18 100%);-webkit-font-smoothing:antialiased;padding:44px 20px;line-height:1.55;}
+  .sheet{max-width:920px;margin:0 auto;background:var(--ivory);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.04);}
 
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(1100px 700px at 50% -10%, #102a40 0%, #081420 60%, #060f18 100%);
-    -webkit-font-smoothing:antialiased;
-    padding:44px 20px;
-    line-height:1.55;
-  }
+  .brandlock{display:flex;align-items:center;gap:11px;}
+  .bl-mark{width:42px;height:42px;flex:none;}
+  .bl-name{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:15px;letter-spacing:.005em;color:var(--ivory);line-height:1.04;}
+  .bl-tag{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-lite);font-weight:600;margin-top:4px;}
+  .brandlock.on-light .bl-name{color:var(--midnight);}
+  .brandlock.on-light .bl-tag{color:var(--gold-deep);}
 
-  .sheet{
-    max-width:920px;
-    margin:0 auto;
-    background:var(--ivory);
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 40px 90px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.04);
-  }
-
-  /* shared type pieces */
-  .eyebrow{
-    font-size:11.5px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    font-weight:700;
-    color:var(--gold);
-    margin:0 0 14px;
-  }
+  .eyebrow{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--gold);margin:0 0 14px;}
   .eyebrow.on-dark{color:var(--gold-lite);}
-  h2.section-title{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:600;
-    font-size:clamp(23px,3.1vw,30px);
-    line-height:1.12;
-    letter-spacing:-.01em;
-    margin:0 0 14px;
-  }
+  h2.section-title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(23px,3.1vw,30px);line-height:1.12;letter-spacing:-.01em;margin:0 0 14px;}
   p{margin:0 0 13px;}
 
-  /* ============ HERO ============ */
-  .hero{
-    position:relative;
-    background:
-      radial-gradient(620px 360px at 78% 36%, rgba(214,165,60,.20), transparent 62%),
-      linear-gradient(160deg,var(--midnight) 0%, var(--midnight-2) 60%, #0A2138 100%);
-    color:var(--ivory);
-    padding:46px 50px 0;
-    overflow:hidden;
-  }
-  .hero::after{ /* faint star field */
-    content:"";
-    position:absolute; inset:0;
-    background-image:
-      radial-gradient(1.4px 1.4px at 14% 30%, rgba(255,255,255,.5), transparent),
-      radial-gradient(1.4px 1.4px at 32% 72%, rgba(255,255,255,.35), transparent),
-      radial-gradient(1.2px 1.2px at 60% 20%, rgba(255,255,255,.3), transparent),
-      radial-gradient(1.4px 1.4px at 88% 64%, rgba(255,255,255,.4), transparent),
-      radial-gradient(1.2px 1.2px at 70% 84%, rgba(255,255,255,.28), transparent);
-    opacity:.6; pointer-events:none;
-  }
-  .hero-grid{
-    position:relative; z-index:1;
-    display:grid;
-    grid-template-columns:1.32fr .88fr;
-    gap:30px;
-    align-items:center;
-  }
-  .hero-copy .eyebrow{margin-bottom:18px;}
-  h1.title{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:600;
-    font-size:clamp(40px,6.4vw,64px);
-    line-height:.98;
-    letter-spacing:-.018em;
-    margin:0 0 18px;
-  }
+  /* HERO */
+  .hero{position:relative;color:var(--ivory);background:radial-gradient(620px 360px at 78% 42%, rgba(214,165,60,.20), transparent 62%),linear-gradient(160deg,var(--midnight) 0%, var(--midnight-2) 60%, #0A2138 100%);padding:30px 50px 0;overflow:hidden;}
+  .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(1.4px 1.4px at 14% 30%, rgba(255,255,255,.5), transparent),radial-gradient(1.4px 1.4px at 32% 72%, rgba(255,255,255,.35), transparent),radial-gradient(1.2px 1.2px at 60% 18%, rgba(255,255,255,.3), transparent),radial-gradient(1.4px 1.4px at 88% 60%, rgba(255,255,255,.4), transparent),radial-gradient(1.2px 1.2px at 70% 84%, rgba(255,255,255,.28), transparent);opacity:.6;pointer-events:none;}
+  .brandbar{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:24px;margin-bottom:26px;border-bottom:1px solid var(--hair);}
+  .eventtag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold-lite);border:1px solid var(--hair);padding:7px 13px;border-radius:999px;white-space:nowrap;}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.32fr .88fr;gap:30px;align-items:center;}
+  h1.title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(40px,6.4vw,62px);line-height:.98;letter-spacing:-.018em;margin:0 0 18px;}
   h1.title .accent{color:var(--gold-lite);}
-  .deck{
-    font-size:clamp(15px,1.7vw,17.5px);
-    color:#D8E3EC;
-    max-width:30em;
-    margin:0;
-    line-height:1.5;
-  }
+  .deck{font-size:clamp(15px,1.7vw,17.5px);color:#D8E3EC;max-width:30em;margin:0;line-height:1.5;}
 
-  /* hub + spoke signature */
   .hub-wrap{display:flex;flex-direction:column;align-items:center;}
-  .hub-svg{width:100%;max-width:300px;height:auto;display:block;}
-  .hub-caption{
-    font-size:11px;
-    color:var(--mist);
-    text-align:center;
-    line-height:1.45;
-    margin:14px 4px 0;
-    max-width:30em;
-  }
+  .hub-svg{width:100%;max-width:236px;height:auto;display:block;}
+  .hub-caption{font-size:11px;color:var(--mist);text-align:center;line-height:1.45;margin:14px 4px 0;max-width:30em;}
+  @keyframes capglow{0%,100%{opacity:.5}50%{opacity:.95}}
+  .cap-glow{animation:capglow 3.8s ease-in-out infinite;transform-origin:center;}
 
-  @keyframes hubpulse{
-    0%{r:14px; opacity:.55;}
-    70%{r:34px; opacity:0;}
-    100%{r:34px; opacity:0;}
-  }
-  @keyframes spokeflow{ to{ stroke-dashoffset:-18; } }
-  .pulse-ring{ animation:hubpulse 3.4s ease-out infinite; transform-origin:center; }
-  .spoke{ stroke-dasharray:2.4 6; animation:spokeflow 2.6s linear infinite; }
-
-  /* hero info ribbon */
-  .ribbon{
-    position:relative; z-index:1;
-    margin-top:36px;
-    border-top:1px solid var(--hair);
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-  }
-  .ribbon .cell{
-    padding:18px 14px 20px;
-    border-right:1px solid rgba(214,165,60,.16);
-  }
+  .ribbon{position:relative;z-index:1;margin-top:34px;border-top:1px solid var(--hair);display:grid;grid-template-columns:repeat(4,1fr);}
+  .ribbon .cell{padding:17px 14px 19px;border-right:1px solid rgba(214,165,60,.16);}
   .ribbon .cell:last-child{border-right:none;}
-  .ribbon .k{
-    font-size:10px; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--gold); font-weight:700; margin-bottom:6px;
-  }
-  .ribbon .v{
-    font-family:"Fraunces",Georgia,serif; font-weight:500;
-    font-size:16px; color:var(--ivory); line-height:1.2;
-  }
+  .ribbon .k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;}
+  .ribbon .v{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:16px;color:var(--ivory);line-height:1.2;}
   .ribbon .v small{display:block;font-family:"Inter";font-weight:400;font-size:11.5px;color:var(--mist);margin-top:4px;letter-spacing:0;text-transform:none;}
-  .hero-foot{
-    position:relative; z-index:1;
-    text-align:center;
-    font-size:11.5px; letter-spacing:.04em;
-    color:var(--mist);
-    padding:14px 0 22px;
-  }
+  .hero-foot{position:relative;z-index:1;text-align:center;font-size:11.5px;letter-spacing:.04em;color:var(--mist);padding:13px 0 20px;}
   .hero-foot strong{color:var(--gold-lite);font-weight:600;}
 
-  /* ============ BODY ============ */
-  .body{padding:42px 50px 8px;}
-  .two-col{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:38px;
-    align-items:start;
-  }
+  /* BODY */
+  .body{padding:40px 50px 8px;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start;}
   .lead{font-size:15px;color:var(--ink);}
-  .quote{
-    margin:26px 0 4px;
-    padding:22px 26px;
-    background:var(--ivory-2);
-    border-left:3px solid var(--gold);
-    border-radius:0 10px 10px 0;
-  }
-  .quote p{
-    font-family:"Fraunces",Georgia,serif;
-    font-weight:400;
-    font-style:italic;
-    font-size:18px;
-    line-height:1.42;
-    color:var(--midnight);
-    margin:0;
-  }
-
-  .unis{
-    margin-top:6px;
-    display:flex; flex-wrap:wrap; gap:7px;
-  }
-  .unis span{
-    font-size:11.5px; font-weight:600; color:var(--midnight);
-    background:rgba(11,34,55,.06);
-    border:1px solid var(--hair-soft);
-    padding:5px 10px; border-radius:999px;
-  }
-
-  /* divider */
+  .quote{margin:26px 0 4px;padding:22px 26px;background:var(--ivory-2);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
+  .quote p{font-family:"Fraunces",Georgia,serif;font-weight:400;font-style:italic;font-size:18px;line-height:1.42;color:var(--midnight);margin:0;}
+  .unis{margin-top:6px;display:flex;flex-wrap:wrap;gap:7px;}
+  .unis span{font-size:11.5px;font-weight:600;color:var(--midnight);background:rgba(11,34,55,.06);border:1px solid var(--hair-soft);padding:5px 10px;border-radius:999px;}
   .rule{height:1px;background:var(--hair-soft);margin:36px 0;}
-
-  /* featured voices */
   .voices-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:20px;}
   .voices-head .section-title{margin-bottom:0;max-width:18em;}
   .voices-head .note{font-size:12.5px;color:var(--ink-soft);max-width:18em;}
-  .cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-  }
-  .card{
-    background:var(--ivory-2);
-    border:1px solid var(--hair-soft);
-    border-top:3px solid var(--gold);
-    border-radius:10px;
-    padding:18px 17px 19px;
-  }
-  .card .nm{
-    font-family:"Fraunces",Georgia,serif; font-weight:600;
-    font-size:18.5px; line-height:1.08; color:var(--midnight);
-    margin:0 0 6px;
-  }
-  .card .rl{
-    font-size:11.5px; font-weight:700; letter-spacing:.02em;
-    color:var(--gold); text-transform:uppercase; line-height:1.3;
-    margin:0 0 10px;
-  }
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .card{background:var(--ivory-2);border:1px solid var(--hair-soft);border-top:3px solid var(--gold);border-radius:10px;padding:18px 17px 19px;}
+  .card .nm{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:18.5px;line-height:1.08;color:var(--midnight);margin:0 0 6px;}
+  .card .rl{font-size:11.5px;font-weight:700;letter-spacing:.02em;color:var(--gold-deep);text-transform:uppercase;line-height:1.3;margin:0 0 10px;}
   .card .ds{font-size:12.5px;color:var(--ink-soft);line-height:1.45;margin:0;}
   .voices-foot{font-size:12.5px;color:var(--ink-soft);margin:16px 2px 0;}
   .voices-foot strong{color:var(--midnight);font-weight:600;}
 
-  /* ============ STATS BAND ============ */
-  .stats{
-    background:
-      radial-gradient(700px 300px at 20% 0%, rgba(214,165,60,.14), transparent 60%),
-      linear-gradient(150deg,var(--midnight) 0%, var(--midnight-2) 100%);
-    color:var(--ivory);
-    padding:36px 50px 38px;
-    margin-top:40px;
-  }
+  /* STATS */
+  .stats{background:radial-gradient(700px 300px at 20% 0%, rgba(214,165,60,.14), transparent 60%),linear-gradient(150deg,var(--midnight) 0%, var(--midnight-2) 100%);color:var(--ivory);padding:36px 50px 38px;margin-top:40px;}
   .stats .eyebrow{margin-bottom:6px;}
   .stats .band-note{font-size:12.5px;color:var(--mist);margin:0 0 22px;}
-  .stat-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:24px;
-  }
-  .stat .num{
-    font-family:"Space Grotesk",ui-monospace,monospace;
-    font-weight:600;
-    font-size:clamp(34px,4.6vw,46px);
-    line-height:1;
-    color:var(--gold-lite);
-    letter-spacing:-.01em;
-    margin-bottom:9px;
-  }
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .stat .num{font-family:"Space Grotesk",ui-monospace,monospace;font-weight:600;font-size:clamp(34px,4.6vw,46px);line-height:1;color:var(--gold-lite);letter-spacing:-.01em;margin-bottom:9px;}
   .stat .lbl{font-size:12px;color:#CFDAE4;line-height:1.4;}
 
-  /* ============ FOOTER / CTA ============ */
-  .foot{
-    background:var(--ivory);
-    padding:34px 50px 40px;
-    display:grid;
-    grid-template-columns:1.25fr 1fr;
-    gap:34px;
-    align-items:start;
-  }
-  .foot .cta-title{
-    font-family:"Fraunces",Georgia,serif;font-weight:600;
-    font-size:23px;line-height:1.1;color:var(--midnight);margin:0 0 10px;
-  }
+  /* FOOTER */
+  .foot{background:var(--ivory);padding:34px 50px 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start;}
+  .foot .cta-title{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:23px;line-height:1.1;color:var(--midnight);margin:0 0 10px;}
   .foot .cta-body{font-size:13.5px;color:var(--ink-soft);margin:0 0 16px;}
-  .reg{
-    display:inline-flex;align-items:center;gap:9px;
-    font-size:12.5px;font-weight:600;color:var(--midnight);
-    background:rgba(214,165,60,.16);
-    border:1px solid var(--hair);
-    padding:9px 15px;border-radius:999px;
-  }
+  .reg{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;color:var(--midnight);background:rgba(214,165,60,.16);border:1px solid var(--hair);padding:9px 15px;border-radius:999px;}
   .reg .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;}
-  .partners{
-    border-left:1px solid var(--hair-soft);
-    padding-left:30px;
-  }
-  .partners .ttl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);margin:0 0 10px;}
-  .partners .lead-org{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:16px;color:var(--midnight);margin:0 0 8px;line-height:1.15;}
-  .partners p{font-size:12px;color:var(--ink-soft);line-height:1.5;margin:0 0 12px;}
+  .partners{border-left:1px solid var(--hair-soft);padding-left:30px;}
+  .partners .ttl{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin:0 0 11px;}
+  .partners p{font-size:12px;color:var(--ink-soft);line-height:1.5;margin:12px 0 12px;}
   .partners .web{font-size:11.5px;color:var(--midnight);font-weight:600;letter-spacing:.02em;}
 
-  /* on-load reveal */
   .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
   @keyframes rise{to{opacity:1;transform:none;}}
-  .d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.28s}
-  .d4{animation-delay:.40s}.d5{animation-delay:.52s}.d6{animation-delay:.64s}
+  .d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.28s}.d4{animation-delay:.40s}.d5{animation-delay:.52s}
 
-  /* ---------- responsive ---------- */
   @media (max-width:720px){
     body{padding:18px 12px;}
-    .hero{padding:34px 24px 0;}
+    .hero{padding:22px 24px 0;}
+    .brandbar{flex-wrap:wrap;gap:12px;padding-bottom:18px;margin-bottom:20px;}
     .hero-grid{grid-template-columns:1fr;gap:18px;}
-    .hub-svg{max-width:240px;}
-    .ribbon{grid-template-columns:1fr 1fr;}
-    .ribbon .cell:nth-child(2){border-right:none;}
+    .hub-svg{max-width:188px;}
+    .ribbon{grid-template-columns:1fr 1fr;}.ribbon .cell:nth-child(2){border-right:none;}
     .body{padding:30px 24px 4px;}
     .two-col{grid-template-columns:1fr;gap:26px;}
     .cards{grid-template-columns:1fr;}
@@ -310,213 +112,214 @@
     .foot{grid-template-columns:1fr;padding:28px 24px 34px;}
     .partners{border-left:none;border-top:1px solid var(--hair-soft);padding-left:0;padding-top:22px;}
   }
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none;}.cap-glow{animation:none;opacity:.8;}}
 
-  @media (prefers-reduced-motion:reduce){
-    .reveal{animation:none;opacity:1;transform:none;}
-    .pulse-ring,.spoke{animation:none;}
-    .spoke{stroke-dasharray:none;}
-  }
-
-  /* ---------- print: aim for one Letter page ---------- */
   @media print{
     @page{size:Letter portrait;margin:0.35in;}
     body{background:#fff;padding:0;line-height:1.4;}
     .sheet{box-shadow:none;border-radius:0;max-width:none;}
-    .reveal{animation:none;opacity:1;transform:none;}
-    .pulse-ring,.spoke{animation:none;}
+    .reveal{animation:none;opacity:1;transform:none;}.cap-glow{animation:none;opacity:.85;}
     *{ -webkit-print-color-adjust:exact;print-color-adjust:exact; }
-    .hero{padding:22px 26px 0;}
-    h1.title{font-size:38px;margin-bottom:12px;}
+    .hero{padding:16px 26px 0;}
+    .brandbar{padding-bottom:13px;margin-bottom:16px;}
+    h1.title{font-size:37px;margin-bottom:12px;}
     .deck{font-size:12px;}
-    .ribbon{margin-top:18px;}
-    .ribbon .cell{padding:11px 12px 12px;}
-    .hero-foot{padding:9px 0 14px;}
-    .body{padding:22px 26px 4px;}
+    .hub-svg{max-width:196px;}
+    .ribbon{margin-top:18px;}.ribbon .cell{padding:10px 12px 11px;}
+    .hero-foot{padding:8px 0 13px;}
+    .body{padding:20px 26px 4px;}
     .two-col{gap:26px;}
     .lead,.card .ds,.voices-foot,.foot .cta-body{font-size:11px;}
-    .quote{margin:16px 0 2px;padding:14px 18px;}
-    .quote p{font-size:14px;}
-    .rule{margin:20px 0;}
+    .quote{margin:15px 0 2px;padding:13px 18px;}.quote p{font-size:14px;}
+    .rule{margin:18px 0;}
     h2.section-title{font-size:21px;margin-bottom:9px;}
-    .cards{gap:12px;}
-    .card{padding:13px 13px 14px;break-inside:avoid;}
-    .stats{padding:22px 26px 24px;margin-top:24px;break-inside:avoid;}
-    .stat .num{font-size:34px;}
-    .foot{padding:22px 26px 22px;break-inside:avoid;}
-    .hub-svg{max-width:250px;}
+    .cards{gap:12px;}.card{padding:12px 13px 13px;break-inside:avoid;}
+    .stats{padding:20px 26px 22px;margin-top:22px;break-inside:avoid;}
+    .stat .num{font-size:33px;}
+    .foot{padding:20px 26px 20px;break-inside:avoid;}
     .card,.stat,.quote{page-break-inside:avoid;}
   }
+.bl-badge{border-radius:9px;overflow:hidden;background:var(--midnight);box-shadow:0 0 0 1px var(--hair),0 2px 8px rgba(0,0,0,.28);display:block;padding:0;}.bl-badge img{width:100%;height:100%;object-fit:cover;display:block;}.hero-dome{max-width:300px;filter:drop-shadow(0 12px 30px rgba(214,165,60,.20));}@media print{.hero-dome{max-width:250px;}}
+/* ---------- interactive (hosted-site) enhancements ---------- */
+html{scroll-behavior:smooth;}
+.card{transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 34px -14px rgba(11,34,55,.5);border-color:var(--gold);}
+.unis span{transition:background .2s ease, color .2s ease, border-color .2s ease;cursor:default;}
+.unis span:hover{background:var(--midnight);color:var(--ivory);border-color:var(--midnight);}
+.hero-dome{transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.hero-dome:hover{transform:translateY(-5px) scale(1.025);}
+.stat{transition:transform .25s ease;}
+.stat:hover{transform:translateY(-3px);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:"Inter",sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.01em;text-decoration:none;cursor:pointer;border-radius:999px;padding:12px 22px;border:none;transition:transform .2s ease, box-shadow .2s ease, background .25s ease;}
+.btn-primary{background:linear-gradient(135deg,var(--gold-lite) 0%, var(--gold) 55%, var(--gold-deep) 100%);color:#241803;box-shadow:0 10px 22px -10px rgba(214,165,60,.85);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(214,165,60,.95);}
+.btn-ghost{background:rgba(214,165,60,.14);color:var(--midnight);border:1px solid var(--hair);}
+.btn-ghost:hover{background:rgba(214,165,60,.24);transform:translateY(-2px);}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.cta-contact{font-size:12px;color:var(--ink-soft);margin:13px 0 0;}
+.cta-contact b{color:var(--midnight);font-weight:600;}
+.js .reveal{opacity:0;transform:translateY(20px);animation:none !important;transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);}
+.js .reveal.inview{opacity:1;transform:none;}
+.stickybar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 24px;background:rgba(11,34,55,.93);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);border-bottom:1px solid var(--hair);transform:translateY(-105%);transition:transform .35s cubic-bezier(.2,.7,.2,1);}
+.stickybar.show{transform:none;}
+.stickybar .sb-name{font-family:"Fraunces",Georgia,serif;color:var(--ivory);font-weight:600;font-size:14px;}
+.stickybar .sb-name b{color:var(--gold-lite);}
+.stickybar .btn{padding:8px 18px;font-size:12.5px;}
+@media (max-width:560px){.stickybar .sb-name{font-size:12px;}.stickybar{padding:8px 16px;}}
+@media print{.stickybar{display:none !important;} .js .reveal{opacity:1 !important;transform:none !important;}}
 </style>
 </head>
 <body>
+<div class="stickybar" id="stickybar">
+  <span class="sb-name"><b>Capitol City</b> Future Forum &middot; Sept 16, 2026</span>
+  <a class="btn btn-primary" href="#register">Register</a>
+</div>
 <div class="sheet">
 
-  <!-- ===================== HERO ===================== -->
   <header class="hero">
+
+    <div class="brandbar reveal d1">
+      <div class="brandlock">
+        <span class="bl-mark bl-badge"><img src="dome_badge.png" alt="Mississippi Capitol dome logo"></span>
+        <div class="bl-text"><div class="bl-name">Great City Mississippi Foundation</div><div class="bl-tag">A great city for a great state</div></div>
+      </div>
+      <span class="eventtag">Mississippi Science Fest</span>
+    </div>
+
     <div class="hero-grid">
-      <div class="hero-copy reveal d1">
-        <p class="eyebrow on-dark">Great City Mississippi Foundation presents</p>
-        <h1 class="title">Capital City<br><span class="accent">Future</span> Forum</h1>
-        <p class="deck">How artificial intelligence is reshaping the classroom and the workplace, and how Mississippi leads from its capital city.</p>
+      <div class="hero-copy reveal d2">
+        <p class="eyebrow on-dark">A Great City Mississippi Foundation Event</p>
+        <h1 class="title">Capitol City<br><span class="accent">Future</span> Forum</h1>
+        <p class="deck">How artificial intelligence is reshaping the classroom and the workplace, and how Mississippi leads from its capitol city.</p>
       </div>
 
-      <div class="hub-wrap reveal d2">
-        <svg class="hub-svg" viewBox="0 0 320 320" role="img" aria-label="A hub and spoke diagram with Jackson at the center connected to universities and employers across Mississippi.">
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#F0C975" stop-opacity=".9"/>
-              <stop offset="100%" stop-color="#F0C975" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <!-- faint concentric reach rings -->
-          <circle cx="160" cy="160" r="138" fill="none" stroke="rgba(214,165,60,.10)"/>
-          <circle cx="160" cy="160" r="96"  fill="none" stroke="rgba(214,165,60,.14)"/>
-          <circle cx="160" cy="160" r="54"  fill="none" stroke="rgba(214,165,60,.18)"/>
-
-          <!-- spokes -->
-          <g stroke="#D6A53C" stroke-width="1.3" opacity=".75">
-            <line class="spoke" x1="160" y1="160" x2="158" y2="26"/>
-            <line class="spoke" x1="160" y1="160" x2="256" y2="64"/>
-            <line class="spoke" x1="160" y1="160" x2="296" y2="172"/>
-            <line class="spoke" x1="160" y1="160" x2="242" y2="262"/>
-            <line class="spoke" x1="160" y1="160" x2="150" y2="296"/>
-            <line class="spoke" x1="160" y1="160" x2="60"  y2="252"/>
-            <line class="spoke" x1="160" y1="160" x2="24"  y2="150"/>
-            <line class="spoke" x1="160" y1="160" x2="78"  y2="58"/>
-          </g>
-
-          <!-- outer nodes (universities / employers across the state) -->
-          <g fill="#F0C975">
-            <circle cx="158" cy="26"  r="4"/>
-            <circle cx="256" cy="64"  r="3.4"/>
-            <circle cx="296" cy="172" r="4.2"/>
-            <circle cx="242" cy="262" r="3.4"/>
-            <circle cx="150" cy="296" r="4"/>
-            <circle cx="60"  cy="252" r="3.6"/>
-            <circle cx="24"  cy="150" r="4.2"/>
-            <circle cx="78"  cy="58"  r="3.4"/>
-          </g>
-
-          <!-- hub: Jackson -->
-          <circle cx="160" cy="160" r="40" fill="url(#glow)"/>
-          <circle class="pulse-ring" cx="160" cy="160" r="14" fill="none" stroke="#F0C975" stroke-width="1.4"/>
-          <circle cx="160" cy="160" r="9" fill="#F7F3EA"/>
-          <circle cx="160" cy="160" r="9" fill="none" stroke="#D6A53C" stroke-width="2"/>
-          <text x="160" y="194" text-anchor="middle" fill="#F7F3EA" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="2">JACKSON</text>
-        </svg>
-        <p class="hub-caption">Jackson at the center. Universities, colleges, and employers form the spokes, carrying talent and innovation to all 82 counties.</p>
+      <div class="hub-wrap reveal d3">
+        <img class="hub-svg hero-dome" src="dome_hero.png" alt="Mississippi State Capitol dome with technology incorporated">
+        <p class="hub-caption">Jackson and the State Capitol at the center of an AI-ready Mississippi, connecting talent, training, and employers across all 82 counties.</p>
       </div>
     </div>
 
-    <!-- info ribbon -->
     <div class="ribbon reveal d3">
-      <div class="cell"><div class="k">Date</div><div class="v">[ Date ]</div></div>
-      <div class="cell"><div class="k">Time</div><div class="v">[ Time ]<small>Luncheon format</small></div></div>
+      <div class="cell"><div class="k">Date</div><div class="v">September 16, 2026<small>Wednesday</small></div></div>
+      <div class="cell"><div class="k">Time</div><div class="v">11 a.m. to 1:30 p.m.<small>Luncheon format</small></div></div>
       <div class="cell"><div class="k">Location</div><div class="v">Millsaps College<small>Jackson, Mississippi</small></div></div>
       <div class="cell"><div class="k">Format</div><div class="v">Keynote &amp; Panel<small>Lunch &amp; conversation</small></div></div>
     </div>
     <div class="hero-foot reveal d3">Presented during the <strong>Mississippi Science Fest</strong></div>
   </header>
 
-  <!-- ===================== BODY ===================== -->
   <main class="body">
     <div class="two-col">
       <section class="reveal d4">
         <p class="eyebrow">The moment</p>
         <h2 class="section-title">A turning point Mississippi cannot miss</h2>
         <p class="lead">Artificial intelligence is rewriting how economies compete and how talent decides where to build a life. Over the past decade, roughly 70,000 more people moved out of Mississippi than moved in, and close to half were young adults aged 25 to 34, many of them college educated and following opportunity to other states.</p>
-        <p class="lead">The Capital City Future Forum reframes that challenge as a choice we can win: prepare Mississippians to lead in an AI-driven economy, and give the next generation a reason to build that future at home.</p>
+        <p class="lead">The Capitol City Future Forum reframes that challenge as a choice we can win: prepare Mississippians to lead in an AI-driven economy, and give the next generation a reason to build that future at home.</p>
       </section>
-
       <section class="reveal d5">
         <p class="eyebrow">Why Jackson</p>
         <h2 class="section-title">The hub of a statewide network</h2>
-        <p class="lead">Jackson sits at the center of the South and at the center of Mississippi's university ecosystem. The capital and its metro are home to a concentration of talent few cities its size can claim.</p>
-        <div class="unis">
-          <span>Jackson State University</span>
-          <span>Belhaven University</span>
-          <span>Millsaps College</span>
-          <span>Tougaloo College</span>
-          <span>Mississippi College</span>
-          <span>Hinds Community College</span>
-          <span>UMMC</span>
-        </div>
+        <p class="lead">Jackson sits at the center of the South and at the center of Mississippi's university ecosystem. The capitol and its metro are home to a concentration of talent few cities its size can claim.</p>
+        <div class="unis"><span>Jackson State University</span><span>Belhaven University</span><span>Millsaps College</span><span>Tougaloo College</span><span>Mississippi College</span><span>Hinds Community College</span><span>UMMC</span></div>
         <p class="lead" style="margin-top:14px;">That strength makes Jackson the natural hub of an AI-ready state: the place where research, training, and employers connect, then send opportunity outward along the spokes to every corner of Mississippi.</p>
       </section>
     </div>
 
     <div class="quote reveal d5">
-      <p>The Capital City Future Forum brings together Mississippi's students, educators, and industry leaders to explore how artificial intelligence is reshaping the classroom and the workplace, equipping the next generation with the skills, tools, and confidence to lead in an AI-driven economy.</p>
+      <p>The Capitol City Future Forum brings together Mississippi's students, educators, and industry leaders to explore how artificial intelligence is reshaping the classroom and the workplace, equipping the next generation with the skills, tools, and confidence to lead in an AI-driven economy.</p>
     </div>
 
     <div class="rule"></div>
 
-    <!-- featured voices -->
     <section class="reveal d4">
       <div class="voices-head">
         <h2 class="section-title">Featured voices</h2>
         <p class="note">A keynote and panel discussion with national leaders and Mississippi's own.</p>
       </div>
       <div class="cards">
-        <div class="card">
-          <p class="nm">Louis Stewart</p>
-          <p class="rl">Head of Ecosystem Development, NVIDIA</p>
-          <p class="ds">A leading national voice on AI, workforce development, and the future of regional economies.</p>
-        </div>
-        <div class="card">
-          <p class="nm">Dina Powell McCormick</p>
-          <p class="rl">President &amp; Vice Chairman, Meta</p>
-          <p class="ds">More than two decades at the highest levels of global finance, technology, and economic development.</p>
-        </div>
-        <div class="card">
-          <p class="nm">Dr. Kollin Napier</p>
-          <p class="rl">Director, Mississippi AI Network (MAIN)</p>
-          <p class="ds">Architect of the nation's first statewide AI initiative, built and based in Mississippi.</p>
-        </div>
+        <div class="card"><p class="nm">Louis Stewart</p><p class="rl">Head of Ecosystem Development, NVIDIA</p><p class="ds">A leading national voice on AI, workforce development, and the future of regional economies.</p></div>
+        <div class="card"><p class="nm">Dina Powell McCormick</p><p class="rl">President &amp; Vice Chairman, Meta</p><p class="ds">More than two decades at the highest levels of global finance, technology, and economic development.</p></div>
+        <div class="card"><p class="nm">Dr. Kollin Napier</p><p class="rl">Director, Mississippi AI Network (MAIN)</p><p class="ds">Architect of the nation's first statewide AI initiative, built and based in Mississippi.</p></div>
       </div>
       <p class="voices-foot">Joined by <strong>economic development and workforce development leaders</strong> from across Jackson and the state.</p>
     </section>
   </main>
 
-  <!-- ===================== STATS ===================== -->
   <section class="stats reveal d4">
     <p class="eyebrow on-dark">By the numbers</p>
     <p class="band-note">The challenge in front of us, and the engine already in motion.</p>
     <div class="stat-grid">
-      <div class="stat">
-        <div class="num">70K+</div>
-        <div class="lbl">Net out-migration of Mississippians in a decade, about half aged 25 to 34.</div>
-      </div>
-      <div class="stat">
-        <div class="num">1st</div>
-        <div class="lbl">Statewide AI initiative in the nation, built in Mississippi through MAIN.</div>
-      </div>
-      <div class="stat">
-        <div class="num">30K+</div>
-        <div class="lbl">Hours of AI training delivered across the state through MAIN.</div>
-      </div>
-      <div class="stat">
-        <div class="num">23</div>
-        <div class="lbl">Public colleges and universities connected, each with an AI-ready lab.</div>
-      </div>
+      <div class="stat"><div class="num">70K+</div><div class="lbl">Net out-migration of Mississippians in a decade, about half aged 25 to 34.</div></div>
+      <div class="stat"><div class="num">1st</div><div class="lbl">Statewide AI initiative in the nation, built in Mississippi through MAIN.</div></div>
+      <div class="stat"><div class="num">30K+</div><div class="lbl">Hours of AI training delivered across the state through MAIN.</div></div>
+      <div class="stat"><div class="num">23</div><div class="lbl">Public colleges and universities connected, each with an AI-ready lab.</div></div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER / CTA ===================== -->
-  <footer class="foot reveal d4">
+  <footer class="foot reveal d4" id="register">
     <div>
       <p class="cta-title">Help build Mississippi's AI future</p>
-      <p class="cta-body">Great City Mississippi Foundation invites students, educators, employers, and civic leaders to the table. Come to learn, to recruit, to teach, or to partner. This is where Mississippi's AI future takes shape, in the capital city, with the whole state in mind.</p>
-      <span class="reg"><span class="dot"></span>Sponsorship &amp; registration: [ name &middot; email &middot; phone ]</span>
+      <p class="cta-body">Great City Mississippi Foundation invites students, educators, employers, and civic leaders to the table. Come to learn, to recruit, to teach, or to partner. This is where Mississippi's AI future takes shape, in the capitol city, with the whole state in mind.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="#">Register to attend</a>
+        <a class="btn btn-ghost" href="#">Become a sponsor</a>
+      </div>
+      <p class="cta-contact"><b>Registration &amp; sponsorship:</b> [ name &middot; email &middot; phone ]</p>
     </div>
     <div class="partners">
       <p class="ttl">Presented by</p>
-      <p class="lead-org">Great City Mississippi Foundation</p>
+      <div class="brandlock on-light" style="margin-bottom:12px;">
+        <span class="bl-mark bl-badge"><img src="dome_badge.png" alt="Mississippi Capitol dome logo"></span>
+        <div class="bl-text"><div class="bl-name">Great City Mississippi Foundation</div><div class="bl-tag">A great city for a great state</div></div>
+      </div>
       <p>In partnership with the Mississippi Artificial Intelligence Network (MAIN), with participation from industry partners including NVIDIA, Meta, and AWS, and Mississippi's universities and employers.</p>
       <p class="web">greatcityms.org &nbsp;&middot;&nbsp; Jackson, Mississippi</p>
     </div>
   </footer>
 
 </div>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('print').matches;
+
+  // Scroll reveal
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('inview'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -7% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('inview'); });
+  }
+
+  // Animated stat counters
+  function animate(el){
+    var raw = el.getAttribute('data-num'); var m = raw.match(/^(\d+)(.*)$/);
+    if(!m){ el.textContent = raw; return; }
+    var target = parseInt(m[1],10), suffix = m[2]||'', dur = 1100, start = null;
+    function step(ts){ if(!start) start = ts; var p = Math.min((ts-start)/dur,1);
+      var e = 1 - Math.pow(1-p,3); el.textContent = Math.floor(e*target) + suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent = target + suffix; }
+    requestAnimationFrame(step);
+  }
+  var nums = document.querySelectorAll('.stat .num');
+  if('IntersectionObserver' in window && !reduce){
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ animate(e.target); sio.unobserve(e.target); } });
+    }, {threshold:.6});
+    nums.forEach(function(el){ var raw = el.textContent.trim(); el.setAttribute('data-num', raw);
+      var m = raw.match(/^(\d+)(.*)$/); if(m){ el.textContent = '0' + (m[2]||''); } sio.observe(el); });
+  }
+
+  // Sticky bar reveal after hero scrolls away
+  var sb = document.getElementById('stickybar'), hero = document.querySelector('.hero');
+  if(sb && hero && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ sb.classList.toggle('show', !e.isIntersecting); });
+    }, {threshold:0, rootMargin:'-60px 0px 0px 0px'}).observe(hero);
+  }
+})();
+</script>
 </body>
 </html>
